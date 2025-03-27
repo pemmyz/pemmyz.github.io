@@ -31,9 +31,11 @@
     }
     .gallery a img {
       width: 100%;
+      max-width: 200px;
       height: auto;
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      object-fit: cover;
     }
     /* Dark mode styles */
     body.dark-mode {
@@ -66,10 +68,18 @@
   <h1>This is my GitHub Pages Website</h1>
   <p class="description">My profile pictures</p>
   <div class="gallery">
-    <a href="images/image1.png" target="_blank"><img src="images/image1.png" alt="Picture 1"></a>
-    <a href="images/image2.png" target="_blank"><img src="images/image2.png" alt="Picture 2"></a>
-    <a href="images/image3.png" target="_blank"><img src="images/image3.png" alt="Picture 3"></a>
-    <a href="images/image4.jpg" target="_blank"><img src="images/image4.jpg" alt="Picture 4"></a>
+    <a href="images/image1.png" target="_blank">
+      <img src="images/thumbs/image1-thumb.png" alt="Picture 1">
+    </a>
+    <a href="images/image2.png" target="_blank">
+      <img src="images/thumbs/image2-thumb.png" alt="Picture 2">
+    </a>
+    <a href="images/image3.png" target="_blank">
+      <img src="images/thumbs/image3-thumb.png" alt="Picture 3">
+    </a>
+    <a href="images/image4.jpg" target="_blank">
+      <img src="images/image4.jpg" alt="Picture 4">
+    </a>
   </div>
   <script>
     const toggleButton = document.getElementById('dark-mode-toggle');
