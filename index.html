@@ -61,11 +61,26 @@
     #dark-mode-toggle:hover {
       background-color: #ccc;
     }
+    .game-link {
+      display: inline-block;
+      margin-bottom: 1em;
+      font-size: 1.1em;
+    }
+    .game-link a {
+      color: #007acc;
+      text-decoration: none;
+    }
+    .dark-mode .game-link a {
+      color: #66ccff;
+    }
   </style>
 </head>
 <body class="dark-mode">
   <button id="dark-mode-toggle">Toggle Dark Mode</button>
   <h1>This is my GitHub Pages Website</h1>
+  <div class="game-link">
+    <a href="js_reactiongame.html">Play the JavaScript Reaction Game</a>
+  </div>
   <p class="description">My profile pictures</p>
   <div class="gallery">
     <a href="images/image1.png" target="_blank">
@@ -89,3 +104,4 @@
   </script>
 </body>
 </html>
+
