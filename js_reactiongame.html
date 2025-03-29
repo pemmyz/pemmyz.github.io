@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Browser Reaction Game</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      background: #fff;
+    }
+    canvas {
+      display: block;
+      margin: 0 auto;
+      background: #fff;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="gameCanvas" width="800" height="600"></canvas>
+  <script>
+    // Game Settings
+    const WIDTH = 800;
+    const HEIGHT = 600;
+    const SQUARE_SIZE = 50;
+    const MAX_SQUARES = 10;
+    const TIME_LIMIT = 5; // seconds
+
+    // Colors
+    const WHITE = "#FFFFFF";
+    const BLACK = "#000000";
+    const RED = "#FF0000";
+
+    // Game Variables and Stats
+    let mode = "classic"; // Modes: "classic" or "hyper"
+    let paused = false;
+    let running = true;
+    let squares = [];
+    let squaresClicked = 0;
+    let squaresMissed = 0;
+    let totalPrompts = 0;
+    let reactionTimes = [];
+    let currentStreak = 0;
+    let longestStreak = 0;
+    let startTime = getTime();
+    let unpausedTime = 0.0;
+    let lastFrameTime = getTime();
+
+    // Set up Canvas
+    const canvas = document.getElementById("gameCanvas");
+    const ctx = canvas.getContext("2d");
+
+    // Helper function: get current time in seconds
+    function getTime() {
+      return performance.now() / 1000;
+    }
+
+    // Reset game state and stats (always starts in classic mode)
+    function resetGame() {
+      mode = "classic";
+      squares = [];
+      squaresClicked = 0;
+      squaresMissed = 0;
+      totalPrompts = 0;
+      reactionTimes = [];
+      currentStreak = 0;
+      longestStreak = 0;
+      startTime = getTime();
+      unpausedTime = 0.0;
+      lastFrameTime = getTime();
+      paused = false;
+    }
+
+    // Create a new square at a random location and record its creation time
+    function createSquare() {
+      const x = Math.random() * (WIDTH - SQUARE_SIZE);
+      const y = Math.random() * (HEIGHT - SQUARE_SIZE);
+      const createdAt = getTime();
+      totalPrompts++;
+      return { x, y, size: SQUARE_SIZE, createdAt };
+    }
+
+    // Remove squares that have expired; count each as a miss and reset streak
+    function removeExpiredSquares() {
+      const currentTime = getTime();
+      let expired = false;
+      squares = squares.filter(sq => {
+        if (currentTime - sq.createdAt > TIME_LIMIT) {
+          squaresMissed++;
+          expired = true;
+          return false;
+        }
+        return true;
+      });
+      if (expired) {
+        currentStreak = 0;
+      }
+    }
+
+    // Draw all active squares
+    function drawSquares() {
+      ctx.fillStyle = RED;
+      squares.forEach(sq => {
+        ctx.fillRect(sq.x, sq.y, sq.size, sq.size);
+      });
+    }
+
+    // Handle click events on squares: remove square and update stats
+    function handleSquareClick(pos) {
+      for (let i = 0; i < squares.length; i++) {
+        const sq = squares[i];
+        if (pos.x >= sq.x && pos.x <= sq.x + sq.size &&
+            pos.y >= sq.y && pos.y <= sq.y + sq.size) {
+          squares.splice(i, 1);
+          squaresClicked++;
+          const reaction = getTime() - sq.createdAt;
+          reactionTimes.push(reaction);
+          currentStreak++;
+          if (currentStreak > longestStreak) {
+            longestStreak = currentStreak;
+          }
+          break;
+        }
+      }
+    }
+
+    // Compute reaction time statistics: fastest, slowest, average, median, standard deviation, 25th and 75th percentiles.
+    function computeReactionStats() {
+      if (reactionTimes.length > 0) {
+        const fastest = Math.min(...reactionTimes);
+        const slowest = Math.max(...reactionTimes);
+        const average = reactionTimes.reduce((a, b) => a + b, 0) / reactionTimes.length;
+        const sorted = [...reactionTimes].sort((a, b) => a - b);
+        const median = sorted.length % 2 === 0 ?
+                       (sorted[sorted.length/2 - 1] + sorted[sorted.length/2]) / 2 :
+                       sorted[Math.floor(sorted.length/2)];
+        let stdev = 0;
+        if (reactionTimes.length > 1) {
+          const mean = average;
+          const sqDiffs = reactionTimes.map(rt => Math.pow(rt - mean, 2));
+          stdev = Math.sqrt(sqDiffs.reduce((a, b) => a + b, 0) / (reactionTimes.length - 1));
+        }
+        const n = sorted.length;
+        const index25 = Math.floor(0.25 * (n - 1));
+        const index75 = Math.floor(0.75 * (n - 1));
+        const p25 = sorted[index25];
+        const p75 = sorted[index75];
+        return { fastest, slowest, average, median, stdev, p25, p75 };
+      } else {
+        return null;
+      }
+    }
+
+    // Draw game statistics on the canvas
+    function drawStats() {
+      const elapsedTime = Math.floor(getTime() - startTime);
+      const currentTimeDisplay = paused ? lastFrameTime : getTime();
+      const totalGameTime = currentTimeDisplay - startTime;
+      const totalResponses = squaresClicked + squaresMissed;
+      const accuracy = totalResponses > 0 ? (squaresClicked / totalResponses * 100) : 0;
+      const promptRatio = totalPrompts > 0 ? (totalResponses / totalPrompts * 100) : 0;
+      
+      ctx.fillStyle = BLACK;
+      ctx.font = "16px Arial";
+      let y = 20;
+      const lineHeight = 20;
+      const lines = [];
+      lines.push(`Mode: ${mode.toUpperCase()} (Press N to toggle mode)`);
+      lines.push(`Paused: ${paused} (Press P to toggle pause)`);
+      lines.push(`Time Played: ${elapsedTime}s`);
+      lines.push(`Total Game Time: ${totalGameTime.toFixed(2)}s | Unpaused Time: ${unpausedTime.toFixed(2)}s`);
+      lines.push(`Squares Clicked: ${squaresClicked} | Squares Missed: ${squaresMissed} | Total Prompts: ${totalPrompts}`);
+      lines.push(`Accuracy: ${accuracy.toFixed(2)}% | Prompt Ratio: ${promptRatio.toFixed(2)}%`);
+      lines.push(`Current Streak: ${currentStreak} | Longest Streak: ${longestStreak}`);
+      
+      const stats = computeReactionStats();
+      if (stats) {
+        lines.push(`Fastest Reaction: ${stats.fastest.toFixed(2)}s | Slowest Reaction: ${stats.slowest.toFixed(2)}s`);
+        lines.push(`Average Reaction: ${stats.average.toFixed(2)}s | Median: ${stats.median.toFixed(2)}s`);
+        lines.push(`Std Dev: ${stats.stdev.toFixed(2)}s | 25th: ${stats.p25.toFixed(2)}s | 75th: ${stats.p75.toFixed(2)}s`);
+      }
+      
+      lines.forEach(line => {
+        ctx.fillText(line, 10, y);
+        y += lineHeight;
+      });
+    }
+
+    // Main game loop using requestAnimationFrame
+    function gameLoop() {
+      if (!running) return;
+      const currentFrameTime = getTime();
+      const dt = currentFrameTime - lastFrameTime;
+      lastFrameTime = currentFrameTime;
+
+      if (!paused) {
+        unpausedTime += dt;
+        // Spawn squares based on the current mode
+        if (mode === "classic") {
+          if (squares.length === 0) {
+            squares.push(createSquare());
+          }
+        } else if (mode === "hyper") {
+          if (squares.length < MAX_SQUARES) {
+            squares.push(createSquare());
+          }
+        }
+        removeExpiredSquares();
+      }
+
+      // Clear the canvas
+      ctx.fillStyle = WHITE;
+      ctx.fillRect(0, 0, WIDTH, HEIGHT);
+
+      // Draw game elements
+      drawSquares();
+      drawStats();
+
+      // Display pause message if game is paused
+      if (paused) {
+        ctx.fillStyle = BLACK;
+        ctx.font = "30px Arial";
+        const text = "Paused";
+        const textWidth = ctx.measureText(text).width;
+        ctx.fillText(text, (WIDTH - textWidth) / 2, HEIGHT / 2);
+      }
+      
+      requestAnimationFrame(gameLoop);
+    }
+
+    // Event Listener: Mouse Click for handling square clicks
+    canvas.addEventListener("mousedown", function(event) {
+      if (!paused) {
+        const rect = canvas.getBoundingClientRect();
+        const pos = {
+          x: event.clientX - rect.left,
+          y: event.clientY - rect.top
+        };
+        handleSquareClick(pos);
+      }
+    });
+
+    // Event Listener: Keyboard events for mode toggle, pause, reset, and exit.
+    document.addEventListener("keydown", function(event) {
+      if (event.key === "n" || event.key === "N") {
+        mode = (mode === "hyper") ? "classic" : "hyper";
+        squares = [];  // Clear current squares on mode change.
+        currentStreak = 0;
+      } else if (event.key === "p" || event.key === "P") {
+        paused = !paused;
+        if (!paused) {
+          lastFrameTime = getTime();
+        }
+      } else if (event.key === "r" || event.key === "R") {
+        resetGame();
+      } else if (event.key === "Escape") {
+        running = false;
+      }
+    });
+
+    // Start the game loop
+    requestAnimationFrame(gameLoop);
+  </script>
+</body>
+</html>
+
