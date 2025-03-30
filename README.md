@@ -4,7 +4,7 @@
 
 ## 🎮 My Projects
 
-- [Play the JavaScript Reaction Game](https://pemmyz.github.io/js_reactiongame.html)
+- [Play the JavaScript Reaction Game](https://pemmyz.github.io/js_reactiongame.html) <div><a href="https://github.com/pemmyz/js_reactiongame">link to repo</a></div>
 - [My GitHub Profile](https://github.com/pemmyz)
 - [My GitHub Repositories](https://github.com/pemmyz?tab=repositories)
 
