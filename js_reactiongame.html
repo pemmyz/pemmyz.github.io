@@ -35,6 +35,7 @@
     let mode = "classic"; // Modes: "classic" or "hyper"
     let paused = false;
     let running = true;
+    let darkMode = true; // Dark mode is now default
     let squares = [];
     let squaresClicked = 0;
     let squaresMissed = 0;
@@ -151,7 +152,7 @@
       }
     }
 
-    // Draw game statistics on the canvas
+    // Draw game statistics on the canvas, including key hints and current statuses.
     function drawStats() {
       const elapsedTime = Math.floor(getTime() - startTime);
       const currentTimeDisplay = paused ? lastFrameTime : getTime();
@@ -160,13 +161,17 @@
       const accuracy = totalResponses > 0 ? (squaresClicked / totalResponses * 100) : 0;
       const promptRatio = totalPrompts > 0 ? (totalResponses / totalPrompts * 100) : 0;
       
-      ctx.fillStyle = BLACK;
+      // Set text color based on dark mode
+      ctx.fillStyle = darkMode ? WHITE : BLACK;
       ctx.font = "16px Arial";
       let y = 20;
       const lineHeight = 20;
       const lines = [];
+      
+      // Game status and key hints
       lines.push(`Mode: ${mode.toUpperCase()} (Press N to toggle mode)`);
       lines.push(`Paused: ${paused} (Press P to toggle pause)`);
+      lines.push(`Dark Mode: ${darkMode ? "ON" : "OFF"} (Press B to toggle dark mode)`);
       lines.push(`Time Played: ${elapsedTime}s`);
       lines.push(`Total Game Time: ${totalGameTime.toFixed(2)}s | Unpaused Time: ${unpausedTime.toFixed(2)}s`);
       lines.push(`Squares Clicked: ${squaresClicked} | Squares Missed: ${squaresMissed} | Total Prompts: ${totalPrompts}`);
@@ -179,6 +184,9 @@
         lines.push(`Average Reaction: ${stats.average.toFixed(2)}s | Median: ${stats.median.toFixed(2)}s`);
         lines.push(`Std Dev: ${stats.stdev.toFixed(2)}s | 25th: ${stats.p25.toFixed(2)}s | 75th: ${stats.p75.toFixed(2)}s`);
       }
+      
+      // Additional key hints line
+      lines.push(`Key Hints: N - Toggle Mode, P - Pause, R - Reset, B - Toggle Dark Mode, Esc - Exit`);
       
       lines.forEach(line => {
         ctx.fillText(line, 10, y);
@@ -208,8 +216,8 @@
         removeExpiredSquares();
       }
 
-      // Clear the canvas
-      ctx.fillStyle = WHITE;
+      // Clear the canvas based on dark mode
+      ctx.fillStyle = darkMode ? BLACK : WHITE;
       ctx.fillRect(0, 0, WIDTH, HEIGHT);
 
       // Draw game elements
@@ -218,7 +226,7 @@
 
       // Display pause message if game is paused
       if (paused) {
-        ctx.fillStyle = BLACK;
+        ctx.fillStyle = darkMode ? WHITE : BLACK;
         ctx.font = "30px Arial";
         const text = "Paused";
         const textWidth = ctx.measureText(text).width;
@@ -240,7 +248,7 @@
       }
     });
 
-    // Event Listener: Keyboard events for mode toggle, pause, reset, and exit.
+    // Event Listener: Keyboard events for mode toggle, pause, reset, dark mode toggle, and exit.
     document.addEventListener("keydown", function(event) {
       if (event.key === "n" || event.key === "N") {
         mode = (mode === "hyper") ? "classic" : "hyper";
@@ -253,6 +261,9 @@
         }
       } else if (event.key === "r" || event.key === "R") {
         resetGame();
+      } else if (event.key === "b" || event.key === "B") {
+        // Toggle dark mode
+        darkMode = !darkMode;
       } else if (event.key === "Escape") {
         running = false;
       }
