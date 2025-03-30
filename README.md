@@ -18,6 +18,3 @@
 
 ---
 
-> *Tip: This markdown is a lightweight version of your HTML page. For full features like dark mode and interactivity, view the live site on GitHub Pages!*
-
-🕹️ Made with ❤️ by [@pemmyz](https://github.com/pemmyz)
