@@ -8,7 +8,7 @@
   - [link to repo](https://github.com/pemmyz/js_reactiongame)
 - [My GitHub Profile](https://github.com/pemmyz)
 - [My GitHub Repositories](https://github.com/pemmyz?tab=repositories)
-- [My X Profile (pemmyzen)]([https://github.com/pemmyz?tab=repositories](https://x.com/pemmyzen))
+- [My X Profile (pemmyzen)](https://x.com/pemmyzen)
 
 
 My X Profile (pemmyzen)
