@@ -17,6 +17,12 @@ Welcome to my GitHub Pages projects! 🎮
 - 🧩 [Play the JavaScript Maze Labyrinth](https://pemmyz.github.io/js_mazelabyrinth/js_mazelabyrinth.html)  
   [View the repo](https://github.com/pemmyz/js_mazelabyrinth)
 
+- 🧩 [Play the JavaScript Maze Labyrinth Redux](https://pemmyz.github.io/js_mazelabyrinth_redux/)  
+  [View the repo](https://github.com/pemmyz/js_mazelabyrinth_redux)
+
+- 🚗 [Play the JavaScript Pikkuautot](https://pemmyz.github.io/js_pikkuautot/)  
+  [View the repo](https://github.com/pemmyz/js_pikkuautot)
+
 ## More Links
 
 - [My GitHub Profile](https://github.com/pemmyz)  
