@@ -8,6 +8,9 @@ Welcome to my GitHub Pages projects! 🎮
 
 ## Play My Games
 
+- 🎮 [Play the JavaScript Pyrillas_bas](https://pemmyz.github.io/js_pyrillas_bas/)  
+  [View the repo](https://github.com/pemmyz/js_pyrillas_bas)
+
 - 🎹 [Play the JavaScript Super Deluxe Synth](https://pemmyz.github.io/js_keyboardsynth/)  
   [View the repo](https://github.com/pemmyz/js_keyboardsynth)
 
