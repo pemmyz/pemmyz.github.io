@@ -29,6 +29,9 @@ Welcome to my GitHub Pages projects! 🎮
 - 🚗 [Play the JavaScript Pikkuautot](https://pemmyz.github.io/js_pikkuautot/)  
   [View the repo](https://github.com/pemmyz/js_pikkuautot)
 
+- 🕹️ [Play the JavaScript 2-Player Tetris](https://pemmyz.github.io/js_2player_tetris/)  
+  [View the repo](https://github.com/pemmyz/js_2player_tetris)
+
 ## More Links
 
 - [My GitHub Profile](https://github.com/pemmyz)  
