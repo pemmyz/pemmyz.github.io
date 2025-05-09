@@ -32,6 +32,10 @@ Welcome to my GitHub Pages projects! 🎮
 - 🕹️ [Play the JavaScript 2-Player Tetris](https://pemmyz.github.io/js_2player_tetris/)  
   [View the repo](https://github.com/pemmyz/js_2player_tetris)
 
+- 🤖⚽ [Play the JavaScript Robot Ball Game](https://pemmyz.github.io/js_robotballgame/)  
+  [View the repo](https://github.com/pemmyz/js_robotballgame)
+
+
 ## More Links
 
 - [My GitHub Profile](https://github.com/pemmyz)  
