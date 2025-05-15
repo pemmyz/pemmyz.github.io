@@ -38,7 +38,7 @@ Welcome to my GitHub Pages projects! 🎮
 - 💥 [Play the JavaScript 4-Way Paddle Ball Game](https://pemmyz.github.io/js_retrobash/)  
   [View the repo](https://github.com/pemmyz/js_retrobash)
 
-- 🐤💨 [Play the JavaScript Flappy Bird Clone in JavaScript/HTML5](https://pemmyz.github.io/js_flappybird/)  
+- 🐤💨 [Play the JavaScript Flappy Bird Clone](https://pemmyz.github.io/js_flappybird/)  
   [View the repo](https://github.com/pemmyz/js_retrobash)
 
 - 🧱👾 [Play the JavaScript Brick Breaker Game](https://pemmyz.github.io/js_flappybird/)  
