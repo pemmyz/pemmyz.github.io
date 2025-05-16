@@ -1,16 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Pemmyz Games and Links</title>
   <style>
+    :root {
+      --bg-color: #121212;
+      --text-color: #e0e0e0;
+      --card-bg: #1e1e1e;
+      --link-color: #4fc3f7;
+    }
+
+    body.light-mode {
+      --bg-color: #f9f9f9;
+      --text-color: #333;
+      --card-bg: #fff;
+      --link-color: #007acc;
+    }
+
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
       padding: 2em;
-      background-color: #f9f9f9;
-      color: #333;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      font-family: Arial, sans-serif;
+      transition: background-color 0.3s, color 0.3s;
     }
 
     h1, h2 {
@@ -28,16 +43,16 @@
     }
 
     li {
-      background: #fff;
+      background: var(--card-bg);
       padding: 1em;
       margin-bottom: 1em;
       border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
     }
 
     li a {
       text-decoration: none;
-      color: #007acc;
+      color: var(--link-color);
       display: block;
       margin-top: 0.3em;
     }
@@ -45,7 +60,7 @@
     .profile-links a {
       display: block;
       margin: 0.5em 0;
-      color: #007acc;
+      color: var(--link-color);
     }
 
     .gallery {
@@ -65,46 +80,56 @@
     .gallery img:hover {
       transform: scale(1.05);
     }
+
+    #toggle-mode {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      background: var(--card-bg);
+      color: var(--text-color);
+      border: none;
+      padding: 0.5em 1em;
+      border-radius: 5px;
+      cursor: pointer;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      transition: background 0.3s, color 0.3s;
+    }
+
+    #toggle-mode:hover {
+      background: var(--link-color);
+      color: #000;
+    }
   </style>
 </head>
 <body>
+
+  <button id="toggle-mode">☀ Light Mode</button>
 
   <div class="section">
     <h1>🎮 Play My Games</h1>
     <ul>
       <li>🎮 <strong><a href="https://pemmyz.github.io/js_pyrillas_bas/" target="_blank">Play the JavaScript Pyrillas_bas</a></strong>  
         <a href="https://github.com/pemmyz/js_pyrillas_bas" target="_blank">View the repo</a></li>
-
       <li>🎹 <strong><a href="https://pemmyz.github.io/js_keyboardsynth/" target="_blank">Play the JavaScript Super Deluxe Synth</a></strong>  
         <a href="https://github.com/pemmyz/js_keyboardsynth" target="_blank">View the repo</a></li>
-
       <li>🎯 <strong><a href="https://pemmyz.github.io/js_reactiongame/js_reactiongame.html" target="_blank">Play the JavaScript Reaction Game</a></strong>  
         <a href="https://github.com/pemmyz/js_reactiongame" target="_blank">View the repo</a></li>
-
       <li>🔢 <strong><a href="https://pemmyz.github.io/js_2048_bot_solver/" target="_blank">Play the JavaScript 2048 Bot Solver</a></strong>  
         <a href="https://github.com/pemmyz/js_2048_bot_solver" target="_blank">View the repo</a></li>
-
       <li>🧩 <strong><a href="https://pemmyz.github.io/js_mazelabyrinth/js_mazelabyrinth.html" target="_blank">Play the JavaScript Maze Labyrinth</a></strong>  
         <a href="https://github.com/pemmyz/js_mazelabyrinth" target="_blank">View the repo</a></li>
-
       <li>🧩 <strong><a href="https://pemmyz.github.io/js_mazelabyrinth_redux/" target="_blank">Play the JavaScript Maze Labyrinth Redux</a></strong>  
         <a href="https://github.com/pemmyz/js_mazelabyrinth_redux" target="_blank">View the repo</a></li>
-
       <li>🚗 <strong><a href="https://pemmyz.github.io/js_pikkuautot/" target="_blank">Play the JavaScript Pikkuautot</a></strong>  
         <a href="https://github.com/pemmyz/js_pikkuautot" target="_blank">View the repo</a></li>
-
       <li>🕹️ <strong><a href="https://pemmyz.github.io/js_2player_tetris/" target="_blank">Play the JavaScript 2-Player Tetris</a></strong>  
         <a href="https://github.com/pemmyz/js_2player_tetris" target="_blank">View the repo</a></li>
-
       <li>🤖⚽ <strong><a href="https://pemmyz.github.io/js_robotballgame/" target="_blank">Play the JavaScript Robot Ball Game</a></strong>  
         <a href="https://github.com/pemmyz/js_robotballgame" target="_blank">View the repo</a></li>
-
       <li>💥 <strong><a href="https://pemmyz.github.io/js_retrobash/" target="_blank">Play the JavaScript 4-Way Paddle Ball Game</a></strong>  
         <a href="https://github.com/pemmyz/js_retrobash" target="_blank">View the repo</a></li>
-
       <li>🐤💨 <strong><a href="https://pemmyz.github.io/js_flappybird/" target="_blank">Play the JavaScript Flappy Bird Clone</a></strong>  
         <a href="https://github.com/pemmyz/js_retrobash" target="_blank">View the repo</a></li>
-
       <li>🧱👾 <strong><a href="https://pemmyz.github.io/js_flappybird/" target="_blank">Play the JavaScript Brick Breaker Game</a></strong>  
         <a href="https://github.com/pemmyz/js_retrobash" target="_blank">View the repo</a></li>
     </ul>
@@ -124,13 +149,28 @@
     <h2>🖼️ My Profile Pictures</h2>
     <p>You can click the images to view them in full size.</p>
     <div class="gallery">
-      <!-- Example image placeholders, replace with your actual image URLs -->
-      <a href="image1_fullsize.jpg" target="_blank"><img src="image1_thumb.jpg" alt="Profile Pic 1"></a>
-      <a href="image2_fullsize.jpg" target="_blank"><img src="image2_thumb.jpg" alt="Profile Pic 2"></a>
-      <!-- Add more as needed -->
+      <!-- Replace with actual image links -->
+      <a href="image1_full.jpg" target="_blank"><img src="image1_thumb.jpg" alt="Profile Pic 1"></a>
+      <a href="image2_full.jpg" target="_blank"><img src="image2_thumb.jpg" alt="Profile Pic 2"></a>
     </div>
   </div>
 
+  <script>
+    const toggleBtn = document.getElementById('toggle-mode');
+    const body = document.body;
+
+    function updateModeText() {
+      toggleBtn.textContent = body.classList.contains('light-mode') ? '🌙 Dark Mode' : '☀ Light Mode';
+    }
+
+    toggleBtn.addEventListener('click', () => {
+      body.classList.toggle('light-mode');
+      updateModeText();
+    });
+
+    // Set initial button text (default is dark mode)
+    updateModeText();
+  </script>
 </body>
 </html>
 
