@@ -1,152 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta name="google-site-verification" content="6mDLn3tJzyoHwWe3qbxI0fsyn7Mg_mP1ogTJ2DLInP0" />
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>My GitHub Pages Website</title>
-  <link rel="icon" href="favicon.png" type="image/png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pemmyz Games and Links</title>
   <style>
     body {
-      font-family: sans-serif;
+      font-family: Arial, sans-serif;
       margin: 0;
       padding: 2em;
-      background-color: #f4f4f4;
-      text-align: center;
-      transition: background-color 0.3s, color 0.3s;
-    }
-    h1 {
-      margin-bottom: 0.2em;
-    }
-    p.description {
-      margin-bottom: 2em;
-      font-size: 1.2em;
+      background-color: #f9f9f9;
       color: #333;
     }
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1em;
-      max-width: 1000px;
-      margin: auto;
+
+    h1, h2 {
+      text-align: center;
     }
-    .gallery a img {
-      width: 100%;
-      max-width: 200px;
-      height: auto;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-      object-fit: cover;
+
+    .section {
+      max-width: 800px;
+      margin: 2em auto;
     }
-    /* Dark mode styles */
-    body.dark-mode {
-      background-color: #333;
-      color: #f4f4f4;
+
+    ul {
+      list-style: none;
+      padding-left: 0;
     }
-    body.dark-mode p.description {
-      color: #f4f4f4;
-    }
-    /* Dark mode toggle button */
-    #dark-mode-toggle {
-      position: fixed;
-      top: 1em;
-      right: 1em;
-      padding: 0.5em 1em;
-      background-color: #ddd;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 1em;
-      transition: background-color 0.3s;
-    }
-    #dark-mode-toggle:hover {
-      background-color: #ccc;
-    }
-    .game-link {
-      display: inline-block;
+
+    li {
+      background: #fff;
+      padding: 1em;
       margin-bottom: 1em;
-      font-size: 1.1em;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
-    .game-link a {
-      color: #007acc;
+
+    li a {
       text-decoration: none;
+      color: #007acc;
+      display: block;
+      margin-top: 0.3em;
     }
-    .dark-mode .game-link a {
-      color: #66ccff;
+
+    .profile-links a {
+      display: block;
+      margin: 0.5em 0;
+      color: #007acc;
+    }
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1em;
+      justify-content: center;
+    }
+
+    .gallery img {
+      max-width: 200px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
     }
   </style>
 </head>
-<body class="dark-mode">
-  <button id="dark-mode-toggle">Toggle Dark Mode</button>
-  <h1>This is my GitHub Pages Website</h1>
-  <br>
-<div class="game-link">
-  <div><a href="https://pemmyz.github.io/js_pyrillas_bas/">Play the JavaScript Pyrillas_bas</a></div>
-  <div><a href="https://github.com/pemmyz/js_pyrillas_bas">(repo)</a></div>
-  <br>
-  <div><a href="https://pemmyz.github.io/js_keyboardsynth/">Play the JavaScript Super Deluxe Synth</a></div>
-  <div><a href="https://github.com/pemmyz/js_keyboardsynth">(repo)</a></div>
-  <br>
-  <div><a href="https://pemmyz.github.io/js_reactiongame/js_reactiongame.html">Play the JavaScript Reaction Game</a></div>
-  <div><a href="https://github.com/pemmyz/js_reactiongame">(repo)</a></div>
-  <br>
-  <div><a href="https://pemmyz.github.io/js_2048_bot_solver/">Play the JavaScript 2048 Bot Solver</a></div>
-  <div><a href="https://github.com/pemmyz/js_2048_bot_solver">(repo)</a></div>
-  <br>
-  <div><a href="https://pemmyz.github.io/js_mazelabyrinth/js_mazelabyrinth.html">Play the JavaScript Maze Labyrinth</a></div>
-  <div><a href="https://github.com/pemmyz/js_mazelabyrinth">(repo)</a></div>
-  <br>
-  <div><a href="https://pemmyz.github.io/js_mazelabyrinth_redux/">Play the JavaScript Maze Labyrinth Redux</a></div>
-  <div><a href="https://github.com/pemmyz/js_mazelabyrinth_redux">(repo)</a></div>
-  <br>
-  <div><a href="https://pemmyz.github.io/js_pikkuautot/">Play the JavaScript Pikkuautot</a></div>
-  <div><a href="https://github.com/pemmyz/js_pikkuautot">(repo)</a></div>
-  <br>
-  <div><a href="https://pemmyz.github.io/js_2player_tetris/">Play the JavaScript 2-Player Tetris</a></div>
-  <div><a href="https://github.com/pemmyz/js_2player_tetris">(repo)</a></div>
-  <br>
-  <div><a href="https://pemmyz.github.io/js_robotballgame/">Play the JavaScript Robot Ball Game</a></div>
-  <div><a href="https://github.com/pemmyz/js_robotballgame">(repo)</a></div>
-  <br>
-  <div><a href="https://pemmyz.github.io/js_retrobash/">Play the JavaScript 4-Way Paddle Ball Game</a></div>
-  <div><a href="https://github.com/pemmyz/js_retrobash">(repo)</a></div>
-  <br>
-  <div><a href="https://pemmyz.github.io/js_flappybird/">Play the JavaScript Flappy Bird Clone</a></div>
-  <div><a href="https://github.com/pemmyz/js_flappybird">(repo)</a></div>
-  <br>
-  <div><a href="https://pemmyz.github.io/js_breakout/">Play the JavaScript Brick Breaker Game</a></div>
-  <div><a href="https://github.com/pemmyz/js_breakout">(repo)</a></div>
-  <br>
-  <div><a href="https://github.com/pemmyz">My GitHub Profile</a></div>
-  <br>
-  <div><a href="https://github.com/pemmyz?tab=repositories">My GitHub Repositories</a></div>
-  <br>
-  <div><a href="https://github.com/pemmyz/pemmyz.github.io">My GitHub Pages Website Repository</a></div>
-  <br>
-  <div><a href="https://x.com/pemmyzen">My X Profile (pemmyzen)</a></div>
-</div>
+<body>
+
+  <div class="section">
+    <h1>🎮 Play My Games</h1>
+    <ul>
+      <li>🎮 <strong><a href="https://pemmyz.github.io/js_pyrillas_bas/" target="_blank">Play the JavaScript Pyrillas_bas</a></strong>  
+        <a href="https://github.com/pemmyz/js_pyrillas_bas" target="_blank">View the repo</a></li>
+
+      <li>🎹 <strong><a href="https://pemmyz.github.io/js_keyboardsynth/" target="_blank">Play the JavaScript Super Deluxe Synth</a></strong>  
+        <a href="https://github.com/pemmyz/js_keyboardsynth" target="_blank">View the repo</a></li>
+
+      <li>🎯 <strong><a href="https://pemmyz.github.io/js_reactiongame/js_reactiongame.html" target="_blank">Play the JavaScript Reaction Game</a></strong>  
+        <a href="https://github.com/pemmyz/js_reactiongame" target="_blank">View the repo</a></li>
+
+      <li>🔢 <strong><a href="https://pemmyz.github.io/js_2048_bot_solver/" target="_blank">Play the JavaScript 2048 Bot Solver</a></strong>  
+        <a href="https://github.com/pemmyz/js_2048_bot_solver" target="_blank">View the repo</a></li>
+
+      <li>🧩 <strong><a href="https://pemmyz.github.io/js_mazelabyrinth/js_mazelabyrinth.html" target="_blank">Play the JavaScript Maze Labyrinth</a></strong>  
+        <a href="https://github.com/pemmyz/js_mazelabyrinth" target="_blank">View the repo</a></li>
+
+      <li>🧩 <strong><a href="https://pemmyz.github.io/js_mazelabyrinth_redux/" target="_blank">Play the JavaScript Maze Labyrinth Redux</a></strong>  
+        <a href="https://github.com/pemmyz/js_mazelabyrinth_redux" target="_blank">View the repo</a></li>
+
+      <li>🚗 <strong><a href="https://pemmyz.github.io/js_pikkuautot/" target="_blank">Play the JavaScript Pikkuautot</a></strong>  
+        <a href="https://github.com/pemmyz/js_pikkuautot" target="_blank">View the repo</a></li>
+
+      <li>🕹️ <strong><a href="https://pemmyz.github.io/js_2player_tetris/" target="_blank">Play the JavaScript 2-Player Tetris</a></strong>  
+        <a href="https://github.com/pemmyz/js_2player_tetris" target="_blank">View the repo</a></li>
+
+      <li>🤖⚽ <strong><a href="https://pemmyz.github.io/js_robotballgame/" target="_blank">Play the JavaScript Robot Ball Game</a></strong>  
+        <a href="https://github.com/pemmyz/js_robotballgame" target="_blank">View the repo</a></li>
+
+      <li>💥 <strong><a href="https://pemmyz.github.io/js_retrobash/" target="_blank">Play the JavaScript 4-Way Paddle Ball Game</a></strong>  
+        <a href="https://github.com/pemmyz/js_retrobash" target="_blank">View the repo</a></li>
+
+      <li>🐤💨 <strong><a href="https://pemmyz.github.io/js_flappybird/" target="_blank">Play the JavaScript Flappy Bird Clone</a></strong>  
+        <a href="https://github.com/pemmyz/js_retrobash" target="_blank">View the repo</a></li>
+
+      <li>🧱👾 <strong><a href="https://pemmyz.github.io/js_flappybird/" target="_blank">Play the JavaScript Brick Breaker Game</a></strong>  
+        <a href="https://github.com/pemmyz/js_retrobash" target="_blank">View the repo</a></li>
+    </ul>
   </div>
-  <p class="description">My profile pictures</p>
-  <div class="gallery">
-    <a href="images/image1.png" target="_blank">
-      <img src="images/thumbs/image1-thumb.png" alt="Picture 1">
-    </a>
-    <a href="images/image2.png" target="_blank">
-      <img src="images/thumbs/image2-thumb.png" alt="Picture 2">
-    </a>
-    <a href="images/image3.png" target="_blank">
-      <img src="images/thumbs/image3-thumb.png" alt="Picture 3">
-    </a>
-    <a href="images/image4.jpg" target="_blank">
-      <img src="images/image4.jpg" alt="Picture 4">
-    </a>
+
+  <div class="section">
+    <h2>🔗 More Links</h2>
+    <div class="profile-links">
+      <a href="https://github.com/pemmyz" target="_blank">My GitHub Profile</a>
+      <a href="https://github.com/pemmyz?tab=repositories" target="_blank">My GitHub Repositories</a>
+      <a href="https://github.com/pemmyz/pemmyz.github.io" target="_blank">My GitHub Pages Website Repository</a>
+      <a href="https://x.com/pemmyzen" target="_blank">My X Profile (pemmyzen)</a>
+    </div>
   </div>
-  <script>
-    const toggleButton = document.getElementById('dark-mode-toggle');
-    toggleButton.addEventListener('click', () => {
-      document.body.classList.toggle('dark-mode');
-    });
-  </script>
+
+  <div class="section">
+    <h2>🖼️ My Profile Pictures</h2>
+    <p>You can click the images to view them in full size.</p>
+    <div class="gallery">
+      <!-- Example image placeholders, replace with your actual image URLs -->
+      <a href="image1_fullsize.jpg" target="_blank"><img src="image1_thumb.jpg" alt="Profile Pic 1"></a>
+      <a href="image2_fullsize.jpg" target="_blank"><img src="image2_thumb.jpg" alt="Profile Pic 2"></a>
+      <!-- Add more as needed -->
+    </div>
+  </div>
+
 </body>
 </html>
 
