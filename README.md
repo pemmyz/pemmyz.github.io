@@ -39,10 +39,10 @@ Welcome to my GitHub Pages projects! 🎮
   [View the repo](https://github.com/pemmyz/js_retrobash)
 
 - 🐤💨 [Play the JavaScript Flappy Bird Clone](https://pemmyz.github.io/js_flappybird/)  
-  [View the repo](https://github.com/pemmyz/js_retrobash)
+  [View the repo](https://github.com/pemmyz/js_flappybird)
 
-- 🧱👾 [Play the JavaScript Brick Breaker Game](https://pemmyz.github.io/js_flappybird/)  
-  [View the repo](https://github.com/pemmyz/js_retrobash)
+- 🧱👾 [Play the JavaScript Brick Breaker Game](https://pemmyz.github.io/js_breakout/)  
+  [View the repo](https://github.com/pemmyz/js_breakout)
 
 
 ## More Links
