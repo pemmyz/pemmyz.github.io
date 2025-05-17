@@ -10,6 +10,7 @@
       --text-color: #e0e0e0;
       --card-bg: #1e1e1e;
       --link-color: #4fc3f7;
+      --card-hover-bg: #2a2a2a;
     }
 
     body.light-mode {
@@ -17,6 +18,7 @@
       --text-color: #333;
       --card-bg: #fff;
       --link-color: #007acc;
+      --card-hover-bg: #f0f0f0;
     }
 
     body {
@@ -42,18 +44,65 @@
       padding-left: 0;
     }
 
-    li {
+    .clickable-card {
+      position: relative; /* For positioning the overlay link */
       background: var(--card-bg);
       padding: 1em;
       margin-bottom: 1em;
       border-radius: 10px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+      transition: background 0.3s, transform 0.2s;
     }
 
-    li a {
+    .clickable-card:hover {
+      background: var(--card-hover-bg);
+      transform: scale(1.01);
+    }
+
+    .card-main-action-link {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1; /* Below the content wrapper */
+      text-decoration: none;
+      color: transparent;
+    }
+    .card-main-action-link span.sr-only { /* Screen-reader only text */
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0,0,0,0);
+        white-space: nowrap;
+        border: 0;
+    }
+
+    .card-content-wrapper {
+      position: relative; /* To establish a stacking context if needed elsewhere */
+      z-index: 2;       /* Ensures this is visually above the card-main-action-link */
+      pointer-events: none; /* Allow clicks/hovers to pass through to elements below by default */
+    }
+
+    .card-content-wrapper .game-title {
+      display: inline-block;
+      margin-bottom: 0.4em;
+      color: var(--text-color);
+      font-weight: bold;
+      /* pointer-events will be 'none' by inheritance, so clicks/hovers pass through */
+    }
+
+    .repo-link {
       text-decoration: none;
       color: var(--link-color);
-      display: inline;
+      pointer-events: auto; /* Make actual links within the wrapper interactive again */
+    }
+
+    .repo-link:hover {
+      text-decoration: underline;
     }
 
     .profile-links a {
@@ -92,6 +141,7 @@
       cursor: pointer;
       box-shadow: 0 2px 5px rgba(0,0,0,0.2);
       transition: background 0.3s, color 0.3s;
+      z-index: 10;
     }
 
     #toggle-mode:hover {
@@ -107,30 +157,114 @@
   <div class="section">
     <h1>🎮 Play My Games</h1>
     <ul>
-      <li><strong>🎮 <a href="https://pemmyz.github.io/js_pyrillas_bas/" target="_blank">Play the JavaScript Pyrillas_bas</a></strong><br>
-        <a href="https://github.com/pemmyz/js_pyrillas_bas" target="_blank">View the repo</a></li>
-      <li><strong>🎹 <a href="https://pemmyz.github.io/js_keyboardsynth/" target="_blank">Play the JavaScript Super Deluxe Synth</a></strong><br>
-        <a href="https://github.com/pemmyz/js_keyboardsynth" target="_blank">View the repo</a></li>
-      <li><strong>🎯 <a href="https://pemmyz.github.io/js_reactiongame/js_reactiongame.html" target="_blank">Play the JavaScript Reaction Game</a></strong><br>
-        <a href="https://github.com/pemmyz/js_reactiongame" target="_blank">View the repo</a></li>
-      <li><strong>🔢 <a href="https://pemmyz.github.io/js_2048_bot_solver/" target="_blank">Play the JavaScript 2048 Bot Solver</a></strong><br>
-        <a href="https://github.com/pemmyz/js_2048_bot_solver" target="_blank">View the repo</a></li>
-      <li><strong>🧩 <a href="https://pemmyz.github.io/js_mazelabyrinth/js_mazelabyrinth.html" target="_blank">Play the JavaScript Maze Labyrinth</a></strong><br>
-        <a href="https://github.com/pemmyz/js_mazelabyrinth" target="_blank">View the repo</a></li>
-      <li><strong>🧩 <a href="https://pemmyz.github.io/js_mazelabyrinth_redux/" target="_blank">Play the JavaScript Maze Labyrinth Redux</a></strong><br>
-        <a href="https://github.com/pemmyz/js_mazelabyrinth_redux" target="_blank">View the repo</a></li>
-      <li><strong>🚗 <a href="https://pemmyz.github.io/js_pikkuautot/" target="_blank">Play the JavaScript Pikkuautot</a></strong><br>
-        <a href="https://github.com/pemmyz/js_pikkuautot" target="_blank">View the repo</a></li>
-      <li><strong>🕹️ <a href="https://pemmyz.github.io/js_2player_tetris/" target="_blank">Play the JavaScript 2-Player Tetris</a></strong><br>
-        <a href="https://github.com/pemmyz/js_2player_tetris" target="_blank">View the repo</a></li>
-      <li><strong>🤖⚽ <a href="https://pemmyz.github.io/js_robotballgame/" target="_blank">Play the JavaScript Robot Ball Game</a></strong><br>
-        <a href="https://github.com/pemmyz/js_robotballgame" target="_blank">View the repo</a></li>
-      <li><strong>💥 <a href="https://pemmyz.github.io/js_retrobash/" target="_blank">Play the JavaScript 4-Way Paddle Ball Game</a></strong><br>
-        <a href="https://github.com/pemmyz/js_retrobash" target="_blank">View the repo</a></li>
-      <li><strong>🐤💨 <a href="https://pemmyz.github.io/js_flappybird/" target="_blank">Play the JavaScript Flappy Bird Clone</a></strong><br>
-        <a href="https://github.com/pemmyz/js_retrobash" target="_blank">View the repo</a></li>
-      <li><strong>🧱👾 <a href="https://pemmyz.github.io/js_flappybird/" target="_blank">Play the JavaScript Brick Breaker Game</a></strong><br>
-        <a href="https://github.com/pemmyz/js_retrobash" target="_blank">View the repo</a></li>
+      <li class="clickable-card" data-game-title="JavaScript Pyrillas_bas">
+        <a href="https://pemmyz.github.io/js_pyrillas_bas/" target="_blank" class="card-main-action-link">
+          <span class="sr-only">Play JavaScript Pyrillas_bas</span>
+        </a>
+        <div class="card-content-wrapper">
+          <span class="game-title">🎮 Play the JavaScript Pyrillas_bas</span><br>
+          <a class="repo-link" href="https://github.com/pemmyz/js_pyrillas_bas" target="_blank">View the repo</a>
+        </div>
+      </li>
+      <li class="clickable-card" data-game-title="JavaScript Super Deluxe Synth">
+        <a href="https://pemmyz.github.io/js_keyboardsynth/" target="_blank" class="card-main-action-link">
+          <span class="sr-only">Play JavaScript Super Deluxe Synth</span>
+        </a>
+        <div class="card-content-wrapper">
+          <span class="game-title">🎹 Play the JavaScript Super Deluxe Synth</span><br>
+          <a class="repo-link" href="https://github.com/pemmyz/js_keyboardsynth" target="_blank">View the repo</a>
+        </div>
+      </li>
+      <li class="clickable-card" data-game-title="JavaScript Reaction Game">
+        <a href="https://pemmyz.github.io/js_reactiongame/js_reactiongame.html" target="_blank" class="card-main-action-link">
+          <span class="sr-only">Play JavaScript Reaction Game</span>
+        </a>
+        <div class="card-content-wrapper">
+          <span class="game-title">🎯 Play the JavaScript Reaction Game</span><br>
+          <a class="repo-link" href="https://github.com/pemmyz/js_reactiongame" target="_blank">View the repo</a>
+        </div>
+      </li>
+      <li class="clickable-card" data-game-title="JavaScript 2048 Bot Solver">
+        <a href="https://pemmyz.github.io/js_2048_bot_solver/" target="_blank" class="card-main-action-link">
+           <span class="sr-only">Play JavaScript 2048 Bot Solver</span>
+        </a>
+        <div class="card-content-wrapper">
+          <span class="game-title">🔢 Play the JavaScript 2048 Bot Solver</span><br>
+          <a class="repo-link" href="https://github.com/pemmyz/js_2048_bot_solver" target="_blank">View the repo</a>
+        </div>
+      </li>
+       <li class="clickable-card" data-game-title="JavaScript Maze Labyrinth">
+        <a href="https://pemmyz.github.io/js_mazelabyrinth/js_mazelabyrinth.html" target="_blank" class="card-main-action-link">
+           <span class="sr-only">Play JavaScript Maze Labyrinth</span>
+        </a>
+        <div class="card-content-wrapper">
+          <span class="game-title">🧩 Play the JavaScript Maze Labyrinth</span><br>
+          <a class="repo-link" href="https://github.com/pemmyz/js_mazelabyrinth" target="_blank">View the repo</a>
+        </div>
+      </li>
+      <li class="clickable-card" data-game-title="JavaScript Maze Labyrinth Redux">
+        <a href="https://pemmyz.github.io/js_mazelabyrinth_redux/" target="_blank" class="card-main-action-link">
+          <span class="sr-only">Play JavaScript Maze Labyrinth Redux</span>
+        </a>
+        <div class="card-content-wrapper">
+          <span class="game-title">🧩 Play the JavaScript Maze Labyrinth Redux</span><br>
+          <a class="repo-link" href="https://github.com/pemmyz/js_mazelabyrinth_redux" target="_blank">View the repo</a>
+        </div>
+      </li>
+      <li class="clickable-card" data-game-title="JavaScript Pikkuautot">
+        <a href="https://pemmyz.github.io/js_pikkuautot/" target="_blank" class="card-main-action-link">
+          <span class="sr-only">Play JavaScript Pikkuautot</span>
+        </a>
+        <div class="card-content-wrapper">
+          <span class="game-title">🚗 Play the JavaScript Pikkuautot</span><br>
+          <a class="repo-link" href="https://github.com/pemmyz/js_pikkuautot" target="_blank">View the repo</a>
+        </div>
+      </li>
+      <li class="clickable-card" data-game-title="JavaScript 2-Player Tetris">
+        <a href="https://pemmyz.github.io/js_2player_tetris/" target="_blank" class="card-main-action-link">
+          <span class="sr-only">Play JavaScript 2-Player Tetris</span>
+        </a>
+        <div class="card-content-wrapper">
+          <span class="game-title">🕹️ Play the JavaScript 2-Player Tetris</span><br>
+          <a class="repo-link" href="https://github.com/pemmyz/js_2player_tetris" target="_blank">View the repo</a>
+        </div>
+      </li>
+      <li class="clickable-card" data-game-title="JavaScript Robot Ball Game">
+        <a href="https://pemmyz.github.io/js_robotballgame/" target="_blank" class="card-main-action-link">
+          <span class="sr-only">Play JavaScript Robot Ball Game</span>
+        </a>
+        <div class="card-content-wrapper">
+          <span class="game-title">🤖⚽ Play the JavaScript Robot Ball Game</span><br>
+          <a class="repo-link" href="https://github.com/pemmyz/js_robotballgame" target="_blank">View the repo</a>
+        </div>
+      </li>
+      <li class="clickable-card" data-game-title="JavaScript 4-Way Paddle Ball Game">
+        <a href="https://pemmyz.github.io/js_retrobash/" target="_blank" class="card-main-action-link">
+          <span class="sr-only">Play JavaScript 4-Way Paddle Ball Game</span>
+        </a>
+        <div class="card-content-wrapper">
+          <span class="game-title">💥 Play the JavaScript 4-Way Paddle Ball Game</span><br>
+          <a class="repo-link" href="https://github.com/pemmyz/js_retrobash" target="_blank">View the repo</a>
+        </div>
+      </li>
+      <li class="clickable-card" data-game-title="JavaScript Flappy Bird Clone">
+        <a href="https://pemmyz.github.io/js_flappybird/" target="_blank" class="card-main-action-link">
+          <span class="sr-only">Play JavaScript Flappy Bird Clone</span>
+        </a>
+        <div class="card-content-wrapper">
+          <span class="game-title">🐤💨 Play the JavaScript Flappy Bird Clone</span><br>
+          <a class="repo-link" href="https://github.com/pemmyz/js_flappybird" target="_blank">View the repo</a>
+        </div>
+      </li>
+      <li class="clickable-card" data-game-title="JavaScript Brick Breaker Game">
+        <a href="https://pemmyz.github.io/js_brickbreaker/" target="_blank" class="card-main-action-link">
+          <span class="sr-only">Play JavaScript Brick Breaker Game</span>
+        </a>
+        <div class="card-content-wrapper">
+          <span class="game-title">🧱👾 Play the JavaScript Brick Breaker Game</span><br>
+          <a class="repo-link" href="https://github.com/pemmyz/js_brickbreaker" target="_blank">View the repo</a>
+        </div>
+      </li>
     </ul>
   </div>
 
@@ -148,18 +282,10 @@
     <h2>🖼️ My Profile Pictures</h2>
     <p>You can click the images to view them in full size.</p>
     <div class="gallery">
-      <a href="images/image1.png" target="_blank">
-        <img src="images/thumbs/image1-thumb.png" alt="Picture 1">
-      </a>
-      <a href="images/image2.png" target="_blank">
-        <img src="images/thumbs/image2-thumb.png" alt="Picture 2">
-      </a>
-      <a href="images/image3.png" target="_blank">
-        <img src="images/thumbs/image3-thumb.png" alt="Picture 3">
-      </a>
-      <a href="images/image4.jpg" target="_blank">
-        <img src="images/image4.jpg" alt="Picture 4">
-      </a>
+      <a href="images/image1.png" target="_blank"><img src="images/thumbs/image1-thumb.png" alt="Picture 1"></a>
+      <a href="images/image2.png" target="_blank"><img src="images/thumbs/image2-thumb.png" alt="Picture 2"></a>
+      <a href="images/image3.png" target="_blank"><img src="images/thumbs/image3-thumb.png" alt="Picture 3"></a>
+      <a href="images/image4.jpg" target="_blank"><img src="images/image4.jpg" alt="Picture 4"></a>
     </div>
   </div>
 
@@ -176,9 +302,25 @@
       updateModeText();
     });
 
-    // Set initial button text (default is dark mode)
     updateModeText();
+
+     document.querySelectorAll('.card-main-action-link').forEach(link => {
+        if (link.href) {
+            const card = link.closest('.clickable-card');
+            const gameTitleFromData = card ? card.dataset.gameTitle : '';
+            // Attempt to get a more descriptive title from the visible text if data-attribute is simple
+            let displayTitle = gameTitleFromData;
+            if (card) {
+                const gameTitleSpan = card.querySelector('.game-title');
+                if (gameTitleSpan && gameTitleSpan.textContent.trim() !== '') {
+                    displayTitle = gameTitleSpan.textContent.trim().replace(/^🎮\s*Play the\s*/, '').replace(/^🎹\s*Play the\s*/, '').replace(/^🎯\s*Play the\s*/, '').replace(/^🔢\s*Play the\s*/, '').replace(/^🧩\s*Play the\s*/, '').replace(/^🚗\s*Play the\s*/, '').replace(/^🕹️\s*Play the\s*/, '').replace(/^🤖⚽\s*Play the\s*/, '').replace(/^💥\s*Play the\s*/, '').replace(/^🐤💨\s*Play the\s*/, '').replace(/^🧱👾\s*Play the\s*/, '');
+                }
+            }
+            const tooltipText = displayTitle ? `Play ${displayTitle} (opens ${link.hostname})` : `Go to: ${link.href}`;
+            link.setAttribute('title', tooltipText);
+        }
+    });
   </script>
+
 </body>
 </html>
-
