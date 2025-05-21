@@ -83,12 +83,29 @@
     }
 
     .card-content-wrapper {
-      position: relative; /* To establish a stacking context if needed elsewhere */
-      z-index: 2;       /* Ensures this is visually above the card-main-action-link */
-      pointer-events: none; /* Allow clicks/hovers to pass through to elements below by default */
+      position: relative;
+      z-index: 2;
+      pointer-events: none;
+      display: flex; /* Added for layout with thumbnail */
+      align-items: center; /* Vertically align items */
+      gap: 1em; /* Space between thumbnail and text content */
     }
 
-    .card-content-wrapper .game-title {
+    .game-thumbnail {
+      width: 100px; /* Width of the thumbnail */
+      height: 100px; /* Height of the thumbnail - same as width for 1:1 */
+      object-fit: cover; /* Ensures the image covers the square, cropping if necessary */
+      border-radius: 6px; /* Slightly rounded corners for the thumbnail */
+      flex-shrink: 0; /* Prevent thumbnail from shrinking */
+      /* pointer-events: none; inherited from parent */
+    }
+
+    .game-info {
+      flex-grow: 1; /* Allows text content to take available space */
+      /* pointer-events: none; inherited from parent */
+    }
+
+    .card-content-wrapper .game-title { /* Selector remains valid */
       display: inline-block;
       margin-bottom: 0.4em;
       color: var(--text-color);
@@ -163,8 +180,11 @@
           <span class="sr-only">Play JavaScript Pyrillas_bas</span>
         </a>
         <div class="card-content-wrapper">
-          <span class="game-title">🎮 Play the JavaScript Pyrillas_bas</span><br>
-          <a class="repo-link" href="https://github.com/pemmyz/js_pyrillas_bas" target="_blank">View the repo</a>
+          <img src="images/thumbs/js_pyrillas_bas_thumb.png" alt="JavaScript Pyrillas_bas Thumbnail" class="game-thumbnail">
+          <div class="game-info">
+            <span class="game-title">🎮 Play the JavaScript Pyrillas_bas</span><br>
+            <a class="repo-link" href="https://github.com/pemmyz/js_pyrillas_bas" target="_blank">View the repo</a>
+          </div>
         </div>
       </li>
       <li class="clickable-card" data-game-title="JavaScript Super Deluxe Synth">
@@ -172,8 +192,11 @@
           <span class="sr-only">Play JavaScript Super Deluxe Synth</span>
         </a>
         <div class="card-content-wrapper">
-          <span class="game-title">🎹 Play the JavaScript Super Deluxe Synth</span><br>
-          <a class="repo-link" href="https://github.com/pemmyz/js_keyboardsynth" target="_blank">View the repo</a>
+          <img src="images/thumbs/js_keyboardsynth_thumb.png" alt="JavaScript Super Deluxe Synth Thumbnail" class="game-thumbnail">
+          <div class="game-info">
+            <span class="game-title">🎹 Play the JavaScript Super Deluxe Synth</span><br>
+            <a class="repo-link" href="https://github.com/pemmyz/js_keyboardsynth" target="_blank">View the repo</a>
+          </div>
         </div>
       </li>
       <li class="clickable-card" data-game-title="JavaScript Reaction Game">
@@ -181,8 +204,11 @@
           <span class="sr-only">Play JavaScript Reaction Game</span>
         </a>
         <div class="card-content-wrapper">
-          <span class="game-title">🎯 Play the JavaScript Reaction Game</span><br>
-          <a class="repo-link" href="https://github.com/pemmyz/js_reactiongame" target="_blank">View the repo</a>
+          <img src="images/thumbs/js_reactiongame_thumb.png" alt="JavaScript Reaction Game Thumbnail" class="game-thumbnail">
+          <div class="game-info">
+            <span class="game-title">🎯 Play the JavaScript Reaction Game</span><br>
+            <a class="repo-link" href="https://github.com/pemmyz/js_reactiongame" target="_blank">View the repo</a>
+          </div>
         </div>
       </li>
       <li class="clickable-card" data-game-title="JavaScript 2048 Bot Solver">
@@ -190,8 +216,11 @@
            <span class="sr-only">Play JavaScript 2048 Bot Solver</span>
         </a>
         <div class="card-content-wrapper">
-          <span class="game-title">🔢 Play the JavaScript 2048 Bot Solver</span><br>
-          <a class="repo-link" href="https://github.com/pemmyz/js_2048_bot_solver" target="_blank">View the repo</a>
+          <img src="images/thumbs/js_2048_bot_solver_thumb.png" alt="JavaScript 2048 Bot Solver Thumbnail" class="game-thumbnail">
+          <div class="game-info">
+            <span class="game-title">🔢 Play the JavaScript 2048 Bot Solver</span><br>
+            <a class="repo-link" href="https://github.com/pemmyz/js_2048_bot_solver" target="_blank">View the repo</a>
+          </div>
         </div>
       </li>
        <li class="clickable-card" data-game-title="JavaScript Maze Labyrinth">
@@ -199,8 +228,11 @@
            <span class="sr-only">Play JavaScript Maze Labyrinth</span>
         </a>
         <div class="card-content-wrapper">
-          <span class="game-title">🧩 Play the JavaScript Maze Labyrinth</span><br>
-          <a class="repo-link" href="https://github.com/pemmyz/js_mazelabyrinth" target="_blank">View the repo</a>
+          <img src="images/thumbs/js_mazelabyrinth_thumb.png" alt="JavaScript Maze Labyrinth Thumbnail" class="game-thumbnail">
+          <div class="game-info">
+            <span class="game-title">🧩 Play the JavaScript Maze Labyrinth</span><br>
+            <a class="repo-link" href="https://github.com/pemmyz/js_mazelabyrinth" target="_blank">View the repo</a>
+          </div>
         </div>
       </li>
       <li class="clickable-card" data-game-title="JavaScript Maze Labyrinth Redux">
@@ -208,8 +240,11 @@
           <span class="sr-only">Play JavaScript Maze Labyrinth Redux</span>
         </a>
         <div class="card-content-wrapper">
-          <span class="game-title">🧩 Play the JavaScript Maze Labyrinth Redux</span><br>
-          <a class="repo-link" href="https://github.com/pemmyz/js_mazelabyrinth_redux" target="_blank">View the repo</a>
+          <img src="images/thumbs/js_mazelabyrinth_redux_thumb.png" alt="JavaScript Maze Labyrinth Redux Thumbnail" class="game-thumbnail">
+          <div class="game-info">
+            <span class="game-title">🧩 Play the JavaScript Maze Labyrinth Redux</span><br>
+            <a class="repo-link" href="https://github.com/pemmyz/js_mazelabyrinth_redux" target="_blank">View the repo</a>
+          </div>
         </div>
       </li>
       <li class="clickable-card" data-game-title="JavaScript Pikkuautot">
@@ -217,8 +252,11 @@
           <span class="sr-only">Play JavaScript Pikkuautot</span>
         </a>
         <div class="card-content-wrapper">
-          <span class="game-title">🚗 Play the JavaScript Pikkuautot</span><br>
-          <a class="repo-link" href="https://github.com/pemmyz/js_pikkuautot" target="_blank">View the repo</a>
+          <img src="images/thumbs/js_pikkuautot_thumb.png" alt="JavaScript Pikkuautot Thumbnail" class="game-thumbnail">
+          <div class="game-info">
+            <span class="game-title">🚗 Play the JavaScript Pikkuautot</span><br>
+            <a class="repo-link" href="https://github.com/pemmyz/js_pikkuautot" target="_blank">View the repo</a>
+          </div>
         </div>
       </li>
       <li class="clickable-card" data-game-title="JavaScript 2-Player Tetris">
@@ -226,8 +264,11 @@
           <span class="sr-only">Play JavaScript 2-Player Tetris</span>
         </a>
         <div class="card-content-wrapper">
-          <span class="game-title">🕹️ Play the JavaScript 2-Player Tetris</span><br>
-          <a class="repo-link" href="https://github.com/pemmyz/js_2player_tetris" target="_blank">View the repo</a>
+          <img src="images/thumbs/js_2player_tetris_thumb.png" alt="JavaScript 2-Player Tetris Thumbnail" class="game-thumbnail">
+          <div class="game-info">
+            <span class="game-title">🕹️ Play the JavaScript 2-Player Tetris</span><br>
+            <a class="repo-link" href="https://github.com/pemmyz/js_2player_tetris" target="_blank">View the repo</a>
+          </div>
         </div>
       </li>
       <li class="clickable-card" data-game-title="JavaScript Robot Ball Game">
@@ -235,8 +276,11 @@
           <span class="sr-only">Play JavaScript Robot Ball Game</span>
         </a>
         <div class="card-content-wrapper">
-          <span class="game-title">🤖⚽ Play the JavaScript Robot Ball Game</span><br>
-          <a class="repo-link" href="https://github.com/pemmyz/js_robotballgame" target="_blank">View the repo</a>
+          <img src="images/thumbs/js_robotballgame_thumb.png" alt="JavaScript Robot Ball Game Thumbnail" class="game-thumbnail">
+          <div class="game-info">
+            <span class="game-title">🤖⚽ Play the JavaScript Robot Ball Game</span><br>
+            <a class="repo-link" href="https://github.com/pemmyz/js_robotballgame" target="_blank">View the repo</a>
+          </div>
         </div>
       </li>
       <li class="clickable-card" data-game-title="JavaScript 4-Way Paddle Ball Game">
@@ -244,8 +288,11 @@
           <span class="sr-only">Play JavaScript 4-Way Paddle Ball Game</span>
         </a>
         <div class="card-content-wrapper">
-          <span class="game-title">💥 Play the JavaScript 4-Way Paddle Ball Game</span><br>
-          <a class="repo-link" href="https://github.com/pemmyz/js_retrobash" target="_blank">View the repo</a>
+          <img src="images/thumbs/js_retrobash_thumb.png" alt="JavaScript 4-Way Paddle Ball Game Thumbnail" class="game-thumbnail">
+          <div class="game-info">
+            <span class="game-title">💥 Play the JavaScript 4-Way Paddle Ball Game</span><br>
+            <a class="repo-link" href="https://github.com/pemmyz/js_retrobash" target="_blank">View the repo</a>
+          </div>
         </div>
       </li>
       <li class="clickable-card" data-game-title="JavaScript Flappy Bird Clone">
@@ -253,8 +300,11 @@
           <span class="sr-only">Play JavaScript Flappy Bird Clone</span>
         </a>
         <div class="card-content-wrapper">
-          <span class="game-title">🐤💨 Play the JavaScript Flappy Bird Clone</span><br>
-          <a class="repo-link" href="https://github.com/pemmyz/js_flappybird" target="_blank">View the repo</a>
+          <img src="images/thumbs/js_flappybird_thumb.png" alt="JavaScript Flappy Bird Clone Thumbnail" class="game-thumbnail">
+          <div class="game-info">
+            <span class="game-title">🐤💨 Play the JavaScript Flappy Bird Clone</span><br>
+            <a class="repo-link" href="https://github.com/pemmyz/js_flappybird" target="_blank">View the repo</a>
+          </div>
         </div>
       </li>
       <li class="clickable-card" data-game-title="JavaScript Brick Breaker Game">
@@ -262,8 +312,11 @@
           <span class="sr-only">Play JavaScript Brick Breaker Game</span>
         </a>
         <div class="card-content-wrapper">
-          <span class="game-title">🧱👾 Play the JavaScript Brick Breaker Game</span><br>
-          <a class="repo-link" href="https://github.com/pemmyz/js_breakout" target="_blank">View the repo</a>
+          <img src="images/thumbs/js_breakout_thumb.png" alt="JavaScript Brick Breaker Game Thumbnail" class="game-thumbnail">
+          <div class="game-info">
+            <span class="game-title">🧱👾 Play the JavaScript Brick Breaker Game</span><br>
+            <a class="repo-link" href="https://github.com/pemmyz/js_breakout" target="_blank">View the repo</a>
+          </div>
         </div>
       </li>
     </ul>
@@ -312,7 +365,7 @@
             // Attempt to get a more descriptive title from the visible text if data-attribute is simple
             let displayTitle = gameTitleFromData;
             if (card) {
-                const gameTitleSpan = card.querySelector('.game-title');
+                const gameTitleSpan = card.querySelector('.game-title'); // This selector is still valid
                 if (gameTitleSpan && gameTitleSpan.textContent.trim() !== '') {
                     displayTitle = gameTitleSpan.textContent.trim().replace(/^🎮\s*Play the\s*/, '').replace(/^🎹\s*Play the\s*/, '').replace(/^🎯\s*Play the\s*/, '').replace(/^🔢\s*Play the\s*/, '').replace(/^🧩\s*Play the\s*/, '').replace(/^🚗\s*Play the\s*/, '').replace(/^🕹️\s*Play the\s*/, '').replace(/^🤖⚽\s*Play the\s*/, '').replace(/^💥\s*Play the\s*/, '').replace(/^🐤💨\s*Play the\s*/, '').replace(/^🧱👾\s*Play the\s*/, '');
                 }
