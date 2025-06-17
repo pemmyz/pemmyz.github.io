@@ -47,6 +47,8 @@ Welcome to my GitHub Pages projects! 🎮
 - 🧱👾 [Play the JavaScript Brick Breaker Game](https://pemmyz.github.io/js_breakout/)  
   [View the repo](https://github.com/pemmyz/js_breakout)
 
+- 🎮 [Play the JavaScript Click Fiction](https://pemmyz.github.io/js_clickfiction/)  
+  [View the repo](https://github.com/pemmyz/js_clickfiction)
 
 ## More Links
 
