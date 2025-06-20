@@ -6,49 +6,53 @@ Welcome to my GitHub Pages projects! 🎮
 
 ## Full page: https://pemmyz.github.io/
 
-## Play My Games
+# Play My Games
+
+### Multiplayer Games
 
 - 🎮 [Play the JavaScript Pyrillas_bas](https://pemmyz.github.io/js_pyrillas_bas/)
-  [View the repo](https://github.com/pemmyz/js_pyrillas_bas)
+    - [View the repo](https://github.com/pemmyz/js_pyrillas_bas)
 
-- 🎹 [Play the JavaScript Super Deluxe Synth](https://pemmyz.github.io/js_keyboardsynth/)  
-  [View the repo](https://github.com/pemmyz/js_keyboardsynth)
+- 🚗 [Play the JavaScript Pikkuautot](https://pemmyz.github.io/js_pikkuautot/)
+    - [View the repo](https://github.com/pemmyz/js_pikkuautot)
 
-- 🎹 [Play the JavaScript Super Deluxe Stylophone](https://pemmyz.github.io/js_stylophone/)  
-  [View the repo](https://github.com/pemmyz/js_stylophone)
+- 🕹️ [Play the JavaScript 2-Player Tetris](https://pemmyz.github.io/js_2player_tetris/)
+    - [View the repo](https://github.com/pemmyz/js_2player_tetris)
 
-- 🎯 [Play the JavaScript Reaction Game](https://pemmyz.github.io/js_reactiongame/js_reactiongame.html)  
-  [View the repo](https://github.com/pemmyz/js_reactiongame)
+- 🤖⚽ [Play the JavaScript Robot Ball Game](https://pemmyz.github.io/js_robotballgame/)
+   - [View the repo](https://github.com/pemmyz/js_robotballgame)
 
-- 🔢 [Play the JavaScript 2048 Bot Solver](https://pemmyz.github.io/js_2048_bot_solver/)  
-  [View the repo](https://github.com/pemmyz/js_2048_bot_solver)
+- 💥 [Play the JavaScript 4-Way Paddle Ball Game](https://pemmyz.github.io/js_retrobash/)
+  - [View the repo](https://github.com/pemmyz/js_retrobash)
 
-- 🧩 [Play the JavaScript Maze Labyrinth](https://pemmyz.github.io/js_mazelabyrinth/js_mazelabyrinth.html)  
-  [View the repo](https://github.com/pemmyz/js_mazelabyrinth)
+- 🎮 [Play the JavaScript Click Fiction](https://pemmyz.github.io/js_clickfiction/)
+  - [View the repo](https://github.com/pemmyz/js_clickfiction)
 
-- 🧩 [Play the JavaScript Maze Labyrinth Redux](https://pemmyz.github.io/js_mazelabyrinth_redux/)  
-  [View the repo](https://github.com/pemmyz/js_mazelabyrinth_redux)
+### Single Player Games
 
-- 🚗 [Play the JavaScript Pikkuautot](https://pemmyz.github.io/js_pikkuautot/)  
-  [View the repo](https://github.com/pemmyz/js_pikkuautot)
+- 🎹 [Play the JavaScript Super Deluxe Synth](https://pemmyz.github.io/js_keyboardsynth/)
+  - [View the repo](https://github.com/pemmyz/js_keyboardsynth)
 
-- 🕹️ [Play the JavaScript 2-Player Tetris](https://pemmyz.github.io/js_2player_tetris/)  
-  [View the repo](https://github.com/pemmyz/js_2player_tetris)
+- 🎹 [Play the JavaScript Super Deluxe Stylophone](https://pemmyz.github.io/js_stylophone/)
+  - [View the repo](https://github.com/pemmyz/js_stylophone)
 
-- 🤖⚽ [Play the JavaScript Robot Ball Game](https://pemmyz.github.io/js_robotballgame/)  
-  [View the repo](https://github.com/pemmyz/js_robotballgame)
+- 🎯 [Play the JavaScript Reaction Game](https://pemmyz.github.io/js_reactiongame/js_reactiongame.html)
+  - [View the repo](https://github.com/pemmyz/js_reactiongame)
 
-- 💥 [Play the JavaScript 4-Way Paddle Ball Game](https://pemmyz.github.io/js_retrobash/)  
-  [View the repo](https://github.com/pemmyz/js_retrobash)
+- 🔢 [Play the JavaScript 2048 Bot Solver](https://pemmyz.github.io/js_2048_bot_solver/)
+  - [View the repo](https://github.com/pemmyz/js_2048_bot_solver)
 
-- 🐤💨 [Play the JavaScript Flappy Bird Clone](https://pemmyz.github.io/js_flappybird/)  
-  [View the repo](https://github.com/pemmyz/js_flappybird)
+- 🧩 [Play the JavaScript Maze Labyrinth](https://pemmyz.github.io/js_mazelabyrinth/js_mazelabyrinth.html)
+  - [View the repo](https://github.com/pemmyz/js_mazelabyrinth)
 
-- 🧱👾 [Play the JavaScript Brick Breaker Game](https://pemmyz.github.io/js_breakout/)  
-  [View the repo](https://github.com/pemmyz/js_breakout)
+- 🧩 [Play the JavaScript Maze Labyrinth Redux](https://pemmyz.github.io/js_mazelabyrinth_redux/)
+  - [View the repo](https://github.com/pemmyz/js_mazelabyrinth_redux)
 
-- 🎮 [Play the JavaScript Click Fiction](https://pemmyz.github.io/js_clickfiction/)  
-  [View the repo](https://github.com/pemmyz/js_clickfiction)
+- 🐤💨 [Play the JavaScript Flappy Bird Clone](https://pemmyz.github.io/js_flappybird/)
+  - [View the repo](https://github.com/pemmyz/js_flappybird)
+
+- 🧱👾 [Play the JavaScript Brick Breaker Game](https://pemmyz.github.io/js_breakout/)
+  - [View the repo](https://github.com/pemmyz/js_breakout)
 
 ## More Links
 
