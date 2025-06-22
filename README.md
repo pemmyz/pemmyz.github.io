@@ -25,6 +25,9 @@ Welcome to my GitHub Pages projects! 🎮
 - 💥 [Play the JavaScript 4-Way Paddle Ball Game](https://pemmyz.github.io/js_retrobash/)
   - [View the repo](https://github.com/pemmyz/js_retrobash)
 
+- 🎮 [Play the JavaScript Tetromino Path Racer](https://pemmyz.github.io/js_tetrominoracing/)
+  - [View the repo](https://github.com/pemmyz/js_tetrominoracing)
+
 - 🎮 [Play the JavaScript Click Fiction](https://pemmyz.github.io/js_clickfiction/)
   - [View the repo](https://github.com/pemmyz/js_clickfiction)
 
