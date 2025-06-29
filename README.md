@@ -39,6 +39,9 @@ Welcome to my GitHub Pages projects! 🎮
 - 🎹 [Play the JavaScript Super Deluxe Stylophone](https://pemmyz.github.io/js_stylophone/)
   - [View the repo](https://github.com/pemmyz/js_stylophone)
 
+- 🥁 [Play the JavaScript DrumBeast](https://pemmyz.github.io/js_drumbeast/)
+  - [View the repo](ttps://github.com/pemmyz/js_drumbeast)
+
 - 🎯 [Play the JavaScript Reaction Game](https://pemmyz.github.io/js_reactiongame/js_reactiongame.html)
   - [View the repo](https://github.com/pemmyz/js_reactiongame)
 
