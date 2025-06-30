@@ -61,7 +61,7 @@ Welcome to my GitHub Pages projects! 🎮
   - [View the repo](https://github.com/pemmyz/js_flappybird)
  
 - 🪙 [Play the JavaScript DropCoin](https://pemmyz.github.io/js_dropcoin/)
-  - [View the repo](https://github.com/pemmyz/js_flappybird)
+  - [View the repo](https://github.com/pemmyz/js_dropcoin)
  
 - 🪙🎮 [Play the JavaScript Coin Flick](https://pemmyz.github.io/js_yetanothercoindrop/)
   - [View the repo](https://github.com/pemmyz/js_yetanothercoindrop)
