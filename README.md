@@ -27,6 +27,9 @@ Welcome to my GitHub Pages projects! 🎮
 
 - 🎮 [Play the JavaScript Tetromino Path Racer](https://pemmyz.github.io/js_tetrominoracing/)
   - [View the repo](https://github.com/pemmyz/js_tetrominoracing)
+ 
+- 🐍🎮 [Play JavaScript 2-Player Snake with AI](https://pemmyz.github.io/js_2psnake/)
+  - [View the repo](https://github.com/pemmyz/js_2psnake)
 
 - 🎮 [Play the JavaScript Click Fiction](https://pemmyz.github.io/js_clickfiction/)
   - [View the repo](https://github.com/pemmyz/js_clickfiction)
@@ -56,7 +59,13 @@ Welcome to my GitHub Pages projects! 🎮
 
 - 🐤💨 [Play the JavaScript Flappy Bird Clone](https://pemmyz.github.io/js_flappybird/)
   - [View the repo](https://github.com/pemmyz/js_flappybird)
-
+ 
+- 🪙 [Play the JavaScript DropCoin](https://pemmyz.github.io/js_dropcoin/)
+  - [View the repo](https://github.com/pemmyz/js_flappybird)
+ 
+- 🪙🎮 [Play the JavaScript Coin Flick](https://pemmyz.github.io/js_yetanothercoindrop/)
+  - [View the repo](https://github.com/pemmyz/js_yetanothercoindrop)
+ 
 - 🧱👾 [Play the JavaScript Brick Breaker Game](https://pemmyz.github.io/js_breakout/)
   - [View the repo](https://github.com/pemmyz/js_breakout)
 
