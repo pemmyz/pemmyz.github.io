@@ -66,6 +66,9 @@ Welcome to my GitHub Pages projects! 🎮
 - 🪙🎮 [Play the JavaScript Coin Flick](https://pemmyz.github.io/js_yetanothercoindrop/)
   - [View the repo](https://github.com/pemmyz/js_yetanothercoindrop)
  
+- 🎮 [🎮 Play the JavaScript Simple Flipper](https://pemmyz.github.io/js_flipper/)
+  - [View the repo](https://github.com/pemmyz/js_flipper/)
+ 
 - 🧱👾 [Play the JavaScript Brick Breaker Game](https://pemmyz.github.io/js_breakout/)
   - [View the repo](https://github.com/pemmyz/js_breakout)
 
