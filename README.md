@@ -68,6 +68,9 @@ Welcome to my GitHub Pages projects! 🎮
  
 - 🎮 [Play the JavaScript Simple Flipper](https://pemmyz.github.io/js_flipper/)
   - [View the repo](https://github.com/pemmyz/js_flipper/)
+
+- 🛩️ [Play the JavaScript Side-Scrolling Flyer](https://pemmyz.github.io/js_hugoflights/)
+  - [View the repo](https://github.com/pemmyz/js_hugoflights/)
  
 - 🧱👾 [Play the JavaScript Brick Breaker Game](https://pemmyz.github.io/js_breakout/)
   - [View the repo](https://github.com/pemmyz/js_breakout)
