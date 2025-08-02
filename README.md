@@ -48,6 +48,9 @@ Welcome to my GitHub Pages projects! 🎮
 - 🎯 [Play the JavaScript Reaction Game](https://pemmyz.github.io/js_reactiongame/js_reactiongame.html)
   - [View the repo](https://github.com/pemmyz/js_reactiongame)
 
+- 🛩️ [Play the JavaScript Side-Scrolling Flyer](https://pemmyz.github.io/js_hugoflights/)
+  - [View the repo](https://github.com/pemmyz/js_hugoflights)
+
 - 🔢 [Play the JavaScript 2048 Bot Solver](https://pemmyz.github.io/js_2048_bot_solver/)
   - [View the repo](https://github.com/pemmyz/js_2048_bot_solver)
 
