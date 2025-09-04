@@ -12,6 +12,12 @@ Welcome to my GitHub Pages projects! 🎮
 
 - 🐝🌼🐝 [Play the JavaScript Bee Flower Bee (Co-op)](https://pemmyz.github.io/js_bumbleracing/)
     - [View the repo](https://github.com/pemmyz/js_bumbleracing)
+ 
+- 🚀 [Play the JavaScript js_thrustvector (Co-op)](https://pemmyz.github.io/js_thrustvector/)
+    - [View the repo](https://github.com/pemmyz/js_thrustvector)
+ 
+- 🏇 [Play the JavaScript Hevoskisat Clicker Challenge](https://pemmyz.github.io/js_horseclick/)
+    - [View the repo](https://github.com/pemmyz/js_horseclick)
 
 - 🎮 [Play the JavaScript Pyrillas_bas](https://pemmyz.github.io/js_pyrillas_bas/)
     - [View the repo](https://github.com/pemmyz/js_pyrillas_bas)
