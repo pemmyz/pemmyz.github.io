@@ -10,6 +10,9 @@ Welcome to my GitHub Pages projects! 🎮
 
 ### Multiplayer Games
 
+- 🐝🌼🐝 [Play the JavaScript Bee Flower Bee (Co-op)](https://pemmyz.github.io/js_bumbleracing/)
+    - [View the repo](https://github.com/pemmyz/js_bumbleracing)
+
 - 🎮 [Play the JavaScript Pyrillas_bas](https://pemmyz.github.io/js_pyrillas_bas/)
     - [View the repo](https://github.com/pemmyz/js_pyrillas_bas)
 
