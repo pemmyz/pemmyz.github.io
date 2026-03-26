@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pemmyz Games and Links</title>
+  <link rel="icon" href="favicon.png" type="image/png">
+  <style>
+    :root {
+      --bg-color: #121212;
+      --text-color: #e0e0e0;
+      --card-bg: #1e1e1e;
+      --link-color: #4fc3f7;
+      --card-hover-bg: #2a2a2a;
+    }
+
+    body.light-mode {
+      --bg-color: #f9f9f9;
+      --text-color: #333;
+      --card-bg: #fff;
+      --link-color: #007acc;
+      --card-hover-bg: #f0f0f0;
+    }
+
+    body {
+      margin: 0;
+      padding: 2em;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      font-family: Arial, sans-serif;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    h1, h2 {
+      text-align: center;
+    }
+
+    .section {
+      max-width: 800px;
+      margin: 2em auto;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .clickable-card {
+      position: relative; /* For positioning the overlay link */
+      background: var(--card-bg);
+      padding: 1em;
+      margin-bottom: 1em;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    .clickable-card:hover {
+      background: var(--card-hover-bg);
+      transform: scale(1.01);
+    }
+
+    .card-main-action-link {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1; /* Below the content wrapper */
+      text-decoration: none;
+      color: transparent;
+    }
+    .card-main-action-link span.sr-only { /* Screen-reader only text */
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0,0,0,0);
+        white-space: nowrap;
+        border: 0;
+    }
+
+    .card-content-wrapper {
+      position: relative;
+      z-index: 2;
+      pointer-events: none;
+      display: flex; /* Added for layout with thumbnail */
+      align-items: center; /* Vertically align items */
+      gap: 1em; /* Space between thumbnail and text content */
+    }
+
+    .game-thumbnail {
+      width: 100px; /* Width of the thumbnail */
+      height: 100px; /* Height of the thumbnail - same as width for 1:1 */
+      object-fit: cover; /* Ensures the image covers the square, cropping if necessary */
+      border-radius: 6px; /* Slightly rounded corners for the thumbnail */
+      flex-shrink: 0; /* Prevent thumbnail from shrinking */
+      /* pointer-events: none; inherited from parent */
+    }
+
+    .game-info {
+      flex-grow: 1; /* Allows text content to take available space */
+      /* pointer-events: none; inherited from parent */
+    }
+
+    .card-content-wrapper .game-title { /* Selector remains valid */
+      display: inline-block;
+      margin-bottom: 0.4em;
+      color: var(--text-color);
+      font-weight: bold;
+      /* pointer-events will be 'none' by inheritance, so clicks/hovers pass through */
+    }
+
+    .repo-link {
+      text-decoration: none;
+      color: var(--link-color);
+      pointer-events: auto; /* Make actual links within the wrapper interactive again */
+    }
+
+    .repo-link:hover {
+      text-decoration: underline;
+    }
+
+    .profile-links a {
+      display: block;
+      margin: 0.5em 0;
+      color: var(--link-color);
+    }
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1em;
+      justify-content: center;
+    }
+
+    .gallery img {
+      max-width: 200px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    #toggle-mode {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      background: var(--card-bg);
+      color: var(--text-color);
+      border: none;
+      padding: 0.5em 1em;
+      border-radius: 5px;
+      cursor: pointer;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      transition: background 0.3s, color 0.3s;
+      z-index: 10;
+    }
+
+    #toggle-mode:hover {
+      background: var(--link-color);
+      color: #000;
+    }
+  </style>
+</head>
+<body>
+
+  <button id="toggle-mode" onclick="document.body.classList.toggle('light-mode')">☀ Light Mode</button>
+
+  <div class="section">
+    <h1>🚀 My Projects</h1>
+    
+    <h2>Web Projects</h2>
+    <ul>
+
+      <!-- JavaScript Elma Planck v1 -->
+      <li class="clickable-card" data-game-title="JavaScript Elma Planck v1">
+        <a href="https://pemmyz.github.io/js_elma_planck_v1/" target="_blank" class="card-main-action-link">
+          <span class="sr-only">Play JavaScript Elma Planck v1</span>
+        </a>
+        <div class="card-content-wrapper">
+          <img src="images/thumbs/js_elma_planck_v1_thumb.png" alt="JavaScript Elma Planck v1 Thumbnail" class="game-thumbnail">
+          <div class="game-info">
+            <span class="game-title">🏍️ Play JavaScript Elma Planck v1</span><br>
+            <a class="repo-link" href="https://github.com/pemmyz/js_elma_planck_v1" target="_blank">View the repo js_elma_planck_v1</a>
+          </div>
+        </div>
+      </li>
+
+      <!-- JavaScript Lock Key Reaction -->
+      <li class="clickable-card" data-game-title="JavaScript Lock Key Reaction">
+        <a href="https://pemmyz.github.io/js_lockkeyreaction/" target="_blank" class="card-main-action-link">
+          <span class="sr-only">Play JavaScript Lock Key Reaction</span>
+        </a>
+        <div class="card-content-wrapper">
+          <img src="images/thumbs/js_lockkeyreaction_thumb.png" alt="JavaScript Lock Key Reaction Thumbnail" class="game-thumbnail">
+          <div class="game-info">
+            <span class="game-title">🔐 Play JavaScript Lock Key Reaction</span><br>
+            <a class="repo-link" href="https://github.com/pemmyz/LockKeyReaction" target="_blank">View the repo LockKeyReaction</a>
+          </div>
+        </div>
+      </li>
+
+      <!-- JavaScript Git Heatmap -->
+      <li class="clickable-card" data-game-title="JavaScript Git Heatmap">
+        <a href="https://pemmyz.github.io/js_githeatmap/" target="_blank" class="card-main-action-link">
+          <span class="sr-only">View JavaScript Git Heatmap</span>
+        </a>
+        <div class="card-content-wrapper">
+          <img src="images/thumbs/js_githeatmap_thumb.png" alt="JavaScript Git Heatmap Thumbnail" class="game-thumbnail">
+          <div class="game-info">
+            <span class="game-title">🟩 View JavaScript Git Heatmap</span><br>
+            <a class="repo-link" href="https://github.com/pemmyz/js_githeatmap" target="_blank">View the repo js_githeatmap</a>
+          </div>
+        </div>
+      </li>
+
+    </ul>
+
+    <h2>Python Projects</h2>
+    <ul>
+
+      <!-- Python Keyboard Synth -->
+      <li class="clickable-card" data-game-title="Python Keyboard Synth">
+        <a href="https://github.com/pemmyz/pykeyboardsynth" target="_blank" class="card-main-action-link">
+          <span class="sr-only">View Python Keyboard Synth on GitHub</span>
+        </a>
+        <div class="card-content-wrapper">
+          <img src="images/thumbs/pykeyboardsynth_thumb.png" alt="Python Keyboard Synth Thumbnail" class="game-thumbnail">
+          <div class="game-info">
+            <span class="game-title">🎹 View Python Keyboard Synth</span><br>
+            <a class="repo-link" href="https://github.com/pemmyz/pykeyboardsynth" target="_blank">View the repo pykeyboardsynth</a>
+          </div>
+        </div>
+      </li>
+
+    </ul>
+  </div>
+
+</body>
+</html>
