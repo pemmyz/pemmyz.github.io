@@ -91,7 +91,8 @@ Welcome to my GitHub Pages projects! 🎮
 
 - [My GitHub Profile](https://github.com/pemmyz)  
 - [My GitHub Repositories](https://github.com/pemmyz?tab=repositories)  
-- [My GitHub Pages Website Repository](https://github.com/pemmyz/pemmyz.github.io)  
+- [My GitHub Pages Website Repository](https://github.com/pemmyz/pemmyz.github.io) 
+- [My Misc GitHub Projects](https://pemmyz.github.io/misc.html) 
 - [My X Profile (pemmyzen)](https://x.com/pemmyzen)
 
 ## My Profile Pictures
